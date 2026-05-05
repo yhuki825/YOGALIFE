@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YOGALIFEは、ヨガ・健康事業・広告・家計見直しを通じて、心身と暮らしを整える個人事業主のライフデザインサービスです。">
+  <title>YOGALIFE | 追分 藍 - Life Design Studio</title>
+
+  <!-- Cloudflare Pagesにそのまま配置できる、単一HTML構成です -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-ink: #2f2a25;
+      --color-muted: #746b61;
+      --color-sage: #6f8f72;
+      --color-sage-dark: #46634b;
+      --color-cream: #f7f2ea;
+      --color-clay: #c49a7b;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--color-ink);
+      background:
+        radial-gradient(circle at 5% 10%, rgba(196, 154, 123, 0.18), transparent 26rem),
+        radial-gradient(circle at 92% 4%, rgba(111, 143, 114, 0.18), transparent 28rem),
+        var(--color-cream);
+      letter-spacing: 0.02em;
+    }
+
+    .font-serif-en {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .glass-panel {
+      background: rgba(255, 252, 246, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.68);
+      box-shadow: 0 24px 80px rgba(47, 42, 37, 0.10);
+      backdrop-filter: blur(18px);
+    }
+
+    .soft-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(111, 143, 114, 0.16);
+      background: rgba(255, 252, 246, 0.86);
+      box-shadow: 0 18px 54px rgba(47, 42, 37, 0.08);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .soft-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(111, 143, 114, 0.13), transparent 42%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .soft-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(111, 143, 114, 0.34);
+      box-shadow: 0 28px 70px rgba(47, 42, 37, 0.13);
+    }
+
+    .soft-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-image {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      filter: saturate(0.86) contrast(0.96);
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .soft-card:hover .service-image {
+      transform: scale(1.04);
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--color-sage-dark);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 2.25rem;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.5;
+    }
+
+    .hero-mask {
+      background:
+        linear-gradient(90deg, rgba(47, 42, 37, 0.64), rgba(47, 42, 37, 0.22) 48%, rgba(47, 42, 37, 0.08)),
+        linear-gradient(180deg, rgba(47, 42, 37, 0.18), rgba(47, 42, 37, 0.46));
+    }
+
+    .vertical-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+
+    @media (max-width: 767px) {
+      .vertical-text {
+        writing-mode: horizontal-tb;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/50 bg-[#fffaf2]/78 backdrop-blur-xl">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
+      <a href="#top" class="group inline-flex items-center gap-3" aria-label="YOGALIFE トップへ戻る">
+        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#46634b] text-sm font-semibold text-white shadow-lg shadow-[#46634b]/20">YL</span>
+        <span>
+          <span class="block font-serif-en text-2xl font-semibold tracking-[0.16em] text-[#2f2a25]">YOGALIFE</span>
+          <span class="block text-[10px] font-medium tracking-[0.28em] text-[#746b61]">LIFE DESIGN STUDIO</span>
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-9 text-[13px] font-semibold tracking-[0.18em] text-[#4f463e] md:flex" aria-label="グローバルナビゲーション">
+        <a href="#about" class="transition hover:text-[#46634b]">ABOUT</a>
+        <a href="#services" class="transition hover:text-[#46634b]">SERVICES</a>
+        <a href="#profile" class="transition hover:text-[#46634b]">PROFILE</a>
+        <a href="#access" class="transition hover:text-[#46634b]">ACCESS</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen overflow-hidden pt-20">
+      <div class="absolute inset-0 -z-10">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2200&auto=format&fit=crop" alt="やわらかな光が差し込むヨガ空間" class="h-full w-full object-cover">
+        <div class="hero-mask absolute inset-0"></div>
+      </div>
+
+      <div class="mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl items-center gap-12 px-5 py-16 md:grid-cols-[1fr_0.42fr] md:px-8">
+        <div class="max-w-3xl text-white">
+          <p class="mb-6 text-xs font-semibold tracking-[0.34em] text-white/82">YOGA / WELLNESS / CREATIVE / MONEY PLAN</p>
+          <h1 class="font-serif-en text-5xl font-medium leading-[1.04] tracking-wide md:text-7xl lg:text-8xl">
+            Harmonize<br>
+            Your Life
+          </h1>
+          <p class="mt-8 max-w-xl text-base leading-9 text-white/88 md:text-lg">
+            心身の健康、仕事の魅せ方、未来のお金。人生を支える大切な領域を、ひとつずつ丁寧に整えていくライフデザインスタジオです。
+          </p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#services" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-bold tracking-[0.18em] text-[#2f2a25] transition hover:-translate-y-1 hover:bg-[#f7f2ea]">
+              SERVICESを見る
+            </a>
+            <a href="#profile" class="inline-flex items-center justify-center rounded-full border border-white/70 px-8 py-4 text-sm font-bold tracking-[0.18em] text-white transition hover:-translate-y-1 hover:bg-white/14">
+              代表プロフィール
+            </a>
+          </div>
+        </div>
+
+        <aside class="glass-panel hidden rounded-[2rem] p-8 text-[#2f2a25] md:block">
+          <p class="section-label">CONCEPT</p>
+          <p class="mt-7 font-serif-en text-3xl leading-tight text-[#2f2a25]">
+            Balance is<br>
+            something you create.
+          </p>
+          <p class="mt-6 text-sm leading-8 text-[#5f554c]">
+            ヨガで身体を整え、健康事業で日常を支え、広告で価値を届け、家計見直しで未来に余白をつくる。YOGALIFEは、暮らしと仕事の調和をデザインします。
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="px-5 py-24 md:px-8 md:py-32">
+      <div class="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
+        <div>
+          <p class="section-label">ABOUT</p>
+          <h2 class="mt-6 text-3xl font-light leading-[1.55] tracking-wide md:text-5xl">
+            「整える」を、<br>
+            人生のすべての領域へ
+          </h2>
+        </div>
+        <div class="rounded-[2rem] bg-white/62 p-8 shadow-xl shadow-[#2f2a25]/5 md:p-10">
+          <p class="text-base leading-9 text-[#5f554c]">
+            YOGALIFEは、ヨガを通じて心身のバランスを整えるだけでなく、日々の生活を支える健康、ビジネスを加速させる広告、そして未来の安心を築く家計管理までを一体的にサポートします。
+          </p>
+          <p class="mt-6 text-base leading-9 text-[#5f554c]">
+            一人ひとりの価値観や働き方に寄り添いながら、無理なく続けられる選択肢を提案し、暮らしと仕事の両面から健やかな変化を後押しします。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-[#fffaf2] px-5 py-24 md:px-8 md:py-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div>
+            <p class="section-label">SERVICES</p>
+            <h2 class="mt-6 text-3xl font-light leading-tight md:text-5xl">事業内容</h2>
+          </div>
+          <p class="max-w-xl text-sm leading-8 text-[#746b61]">
+            心と身体、事業づくり、お金の見直しまで。分野を横断しながら、日々の選択が軽やかになる仕組みづくりをお手伝いします。
+          </p>
+        </div>
+
+        <div class="grid gap-7 md:grid-cols-2">
+          <article class="soft-card rounded-[2rem] p-6 md:p-8">
+            <div class="overflow-hidden rounded-[1.5rem]">
+              <img src="christian-harb-qY468agdO7g-unsplash.jpg" alt="ヨガレッスンの風景" class="service-image w-full">
+            </div>
+            <div class="relative mt-7">
+              <span class="font-serif-en text-sm tracking-[0.28em] text-[#6f8f72]">01 / TRAINING</span>
+              <h3 class="mt-3 text-2xl font-medium tracking-wide">ヨガインストラクター育成</h3>
+              <p class="mt-5 text-sm leading-8 text-[#665d54]">
+                確かな知識と豊かな感性を備えたインストラクターを育成します。自分らしく輝きながら、他者の健康を支えるプロフェッショナルへの道をサポートします。
+              </p>
+            </div>
+          </article>
+
+          <article class="soft-card rounded-[2rem] p-6 md:p-8">
+            <div class="overflow-hidden rounded-[1.5rem]">
+              <img src="https://images.unsplash.com/photo-1499728603263-13726abce5fd?q=80&w=1200&auto=format&fit=crop" alt="健康的な食事とウェルネスのイメージ" class="service-image w-full">
+            </div>
+            <div class="relative mt-7">
+              <span class="font-serif-en text-sm tracking-[0.28em] text-[#6f8f72]">02 / WELLNESS</span>
+              <h3 class="mt-3 text-2xl font-medium tracking-wide">健康事業</h3>
+              <p class="mt-5 text-sm leading-8 text-[#665d54]">
+                企業や地域社会のウェルビーイング向上に貢献します。運動習慣の定着やメンタルヘルスケアなど、持続可能な健康づくりを提案します。
+              </p>
+            </div>
+          </article>
+
+          <article class="soft-card rounded-[2rem] p-6 md:p-8">
+            <div class="overflow-hidden rounded-[1.5rem]">
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop" alt="広告企画の打ち合わせ" class="service-image w-full">
+            </div>
+            <div class="relative mt-7">
+              <span class="font-serif-en text-sm tracking-[0.28em] text-[#6f8f72]">03 / CREATIVE</span>
+              <h3 class="mt-3 text-2xl font-medium tracking-wide">広告業</h3>
+              <p class="mt-5 text-sm leading-8 text-[#665d54]">
+                価値あるサービスを、必要としている人へ届けます。ストーリー性を重視したクリエイティブで、ブランドの魅力を自然に伝える導線を整えます。
+              </p>
+            </div>
+          </article>
+
+          <article class="soft-card rounded-[2rem] p-6 md:p-8">
+            <div class="overflow-hidden rounded-[1.5rem]">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="家計管理とマネープランのイメージ" class="service-image w-full">
+            </div>
+            <div class="relative mt-7">
+              <span class="font-serif-en text-sm tracking-[0.28em] text-[#6f8f72]">04 / MONEY PLAN</span>
+              <h3 class="mt-3 text-2xl font-medium tracking-wide">家計見直し事業</h3>
+              <p class="mt-5 text-sm leading-8 text-[#665d54]">
+                「今」を楽しみながら「未来」に備えるために、家計の健康状態を見える化します。より豊かで自由な人生に向けたマネープランを提案します。
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="px-5 py-24 md:px-8 md:py-32">
+      <div class="mx-auto max-w-6xl rounded-[2.5rem] bg-[#2f2a25] p-8 text-white shadow-2xl shadow-[#2f2a25]/20 md:p-14">
+        <div class="grid gap-10 md:grid-cols-[0.35fr_1fr]">
+          <div class="flex flex-col justify-between gap-8">
+            <p class="section-label text-[#d5b090]">PROFILE</p>
+            <p class="vertical-text font-serif-en text-4xl italic leading-tight text-white/18 md:text-6xl">Representative</p>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold tracking-[0.3em] text-[#d5b090]">追分 藍 / Ai Oiwake</p>
+            <h2 class="mt-5 text-3xl font-light leading-[1.55] md:text-5xl">
+              心・体・経済を整え、<br>
+              その人らしい前進を支える。
+            </h2>
+            <div class="mt-9 space-y-6 text-sm leading-8 text-white/76 md:text-base md:leading-9">
+              <p>
+                YOGALIFE代表。ヨガインストラクターとしての活動を軸に、心・体・経済の三位一体の健康を追求しています。
+              </p>
+              <p>
+                「人はいつからでも、どの領域からでも変わることができる」という信念のもと、富山県を拠点に全国の個人事業主や企業をサポート。広告制作や家計見直しなど、一見異なる分野の事業も、すべては「人生をより良く整える」という目的につながっています。
+              </p>
+            </div>
+            <blockquote class="mt-10 border-l border-[#d5b090] pl-6 font-serif-en text-xl italic leading-relaxed text-white/86">
+              Balance is not something you find, it is something you create.
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Access / Footer Section -->
+    <section id="access" class="px-5 pb-10 md:px-8">
+      <footer class="mx-auto max-w-7xl rounded-[2.5rem] bg-[#fffaf2] p-8 shadow-xl shadow-[#2f2a25]/6 md:p-12">
+        <div class="grid gap-12 md:grid-cols-[1fr_1fr] md:items-end">
+          <div>
+            <p class="font-serif-en text-3xl font-semibold tracking-[0.18em] text-[#2f2a25]">YOGALIFE</p>
+            <p class="mt-3 text-xs font-semibold tracking-[0.3em] text-[#746b61]">LIFE DESIGN STUDIO</p>
+
+            <dl class="mt-10 grid gap-6 text-sm text-[#5f554c]">
+              <div class="grid gap-2 sm:grid-cols-[7rem_1fr]">
+                <dt class="font-serif-en tracking-[0.22em] text-[#6f8f72]">ADDR.</dt>
+                <dd class="leading-8">〒930-0836　富山県富山市</dd>
+              </div>
+              <div class="grid gap-2 sm:grid-cols-[7rem_1fr]">
+                <dt class="font-serif-en tracking-[0.22em] text-[#6f8f72]">BIZ.</dt>
+                <dd class="leading-8">ヨガインストラクター育成 / 健康事業 / 広告業 / 家計見直し事業</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="md:text-right">
+            <div class="flex flex-wrap gap-5 md:justify-end">
+              <a href="#" class="text-sm font-semibold tracking-[0.16em] text-[#4f463e] transition hover:text-[#46634b]">Instagram</a>
+              <a href="#" class="text-sm font-semibold tracking-[0.16em] text-[#4f463e] transition hover:text-[#46634b]">Facebook</a>
+              <a href="#" class="text-sm font-semibold tracking-[0.16em] text-[#4f463e] transition hover:text-[#46634b]">X</a>
+            </div>
+            <p class="mt-10 text-[11px] tracking-[0.2em] text-[#8c8177]">© 2026 YOGALIFE All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <a href="#top" class="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-white/80 bg-white/76 text-[#46634b] shadow-xl shadow-[#2f2a25]/10 backdrop-blur transition hover:-translate-y-1 hover:bg-white" aria-label="ページ上部へ戻る">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m18 15-6-6-6 6"></path>
+    </svg>
+  </a>
+</body>
+</html>
+
